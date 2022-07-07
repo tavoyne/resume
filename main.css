@@ -9,6 +9,7 @@
   --paper-width: calc((1rem / 16) * (595 * (1 / 0.75)));
   --pt: calc((1rem / 16) * (1 / 0.75));
   background-color: hsl(220, 60%, 15%);
+  background-image: url("noise.png");
   color: var(--palette-text1);
   font-family: "Roboto", sans-serif;
   line-height: 1.171875;
