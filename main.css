@@ -92,7 +92,7 @@ main > section > *:nth-child(2) {
 .section-body > section {
   display: grid;
   grid-template-areas: ". ." "body body";
-  row-gap: calc(8 * var(--pt));;
+  row-gap: calc(8 * var(--pt));
 }
 
 .section-body > section:not(:last-child) {
