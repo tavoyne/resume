@@ -19,13 +19,6 @@ a {
   text-decoration: underline;
 }
 
-body {
-  display: flex;
-  justify-content: space-around;
-  padding: 8rem 0;
-  position: relative;
-}
-
 h1 {
   font-family: "Roboto Condensed", sans-serif;
   font-size: calc(24 * var(--pt));
@@ -87,6 +80,16 @@ main > section > *:nth-child(2) {
   flex-basis: 80%;
 }
 
+.noise {
+  background-image: url("noise.png");
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
 .section-body > section {
   display: grid;
   grid-template-areas: ". ." "body body";
@@ -126,14 +129,55 @@ main > section > *:nth-child(2) {
   height: 500px;
   left: -350px;
   position: absolute;
-  top: calc(100vh - 500px);
+  top: 600px;
   transform: rotate(30deg);
   width: 750px;
   z-index: -1;
 }
 
-#noise {
-  background-image: url("noise.png");
+#ellipse-3 {
+  background: linear-gradient(#a6e8e0, #2d69ae);
+  border-radius: 50%;
+  filter: blur(50px);
+  height: calc(250 * var(--pt));
+  left: calc(220 * var(--pt));
+  opacity: 40%;
+  position: absolute;
+  top: calc(80 * var(--pt));
+  transform: rotate(40deg);
+  width: calc(320 * var(--pt));
+  z-index: -1;
+}
+
+#ellipse-4 {
+  background: linear-gradient(#ade2ff, #286bfb);
+  border-radius: 50%;
+  filter: blur(50px);
+  height: calc(250 * var(--pt));
+  left: calc(50 * var(--pt));
+  opacity: 40%;
+  position: absolute;
+  top: calc(450 * var(--pt));
+  transform: rotate(110deg);
+  width: calc(320 * var(--pt));
+  z-index: -1;
+}
+
+#paper {
+  border-radius: 0.5rem;
+  font-size: calc(11 * var(--pt));
+  height: calc(var(--paper-width) * 842 / 595);
+  overflow: hidden;
+  position: relative;
+  width: var(--paper-width);
+}
+
+#paper > .noise {
+  mix-blend-mode: plus-lighter;
+}
+
+#white-bg {
+  background-color: white;
   bottom: 0;
   left: 0;
   position: absolute;
@@ -142,11 +186,11 @@ main > section > *:nth-child(2) {
   z-index: -1;
 }
 
-#paper {
-  background-color: white;
-  border-radius: 0.5rem;
-  font-size: calc(11 * var(--pt));
-  height: calc(var(--paper-width) * 842 / 595);
+#wrapper {
+  display: flex;
+  justify-content: space-around;
   overflow: hidden;
-  width: var(--paper-width);
+  padding: 8rem 0;
+  position: relative;
+  width: 100%;
 }
