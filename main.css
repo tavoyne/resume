@@ -9,7 +9,6 @@
   --paper-width: calc((1rem / 16) * (595 * (1 / 0.75)));
   --pt: calc((1rem / 16) * (1 / 0.75));
   background-color: hsl(220, 60%, 15%);
-  background-image: url("noise.png");
   color: var(--palette-text1);
   font-family: "Roboto", sans-serif;
   line-height: 1.171875;
@@ -21,12 +20,10 @@ a {
 }
 
 body {
-  background-color: white;
-  border-radius: 0.5rem;
-  font-size: calc(11 * var(--pt));
-  height: calc(var(--paper-width) * 842 / 595);
-  margin: 8rem auto;
-  width: var(--paper-width);
+  display: flex;
+  justify-content: space-around;
+  padding: 8rem 0;
+  position: relative;
 }
 
 h1 {
@@ -107,4 +104,49 @@ main > section > *:nth-child(2) {
 
 .section-body > section > p:nth-of-type(2) {
   grid-area: body;
+}
+
+#ellipse-1 {
+  background: linear-gradient(#ade2ff, #286bfb);
+  border-radius: 50%;
+  filter: blur(50px);
+  height: 500px;
+  left: 35%;
+  position: absolute;
+  top: -200px;
+  transform: rotate(60deg);
+  width: 750px;
+  z-index: -1;
+}
+
+#ellipse-2 {
+  background: linear-gradient(#a6e8e0, #2d69ae);
+  border-radius: 50%;
+  filter: blur(50px);
+  height: 500px;
+  left: -350px;
+  position: absolute;
+  top: calc(100vh - 500px);
+  transform: rotate(30deg);
+  width: 750px;
+  z-index: -1;
+}
+
+#noise {
+  background-image: url("noise.png");
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+#paper {
+  background-color: white;
+  border-radius: 0.5rem;
+  font-size: calc(11 * var(--pt));
+  height: calc(var(--paper-width) * 842 / 595);
+  overflow: hidden;
+  width: var(--paper-width);
 }
